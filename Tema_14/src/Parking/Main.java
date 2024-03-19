@@ -1,0 +1,15 @@
+package Parking;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Parking p1=new Parking();
+	
+		p1.imprimirEstado();
+		p1.agregarPlazas(3);
+		p1.imprimirEstado();
+
+	
+	}
+}

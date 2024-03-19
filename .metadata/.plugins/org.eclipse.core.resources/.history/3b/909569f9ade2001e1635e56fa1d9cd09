@@ -1,0 +1,80 @@
+package Map;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class RegistroEstudiantes {
+
+	public static void main(String[] args) {
+
+		HashMap<Integer, String> Registro=new HashMap<Integer, String>();
+		
+		Scanner teclado=new Scanner(System.in);
+		
+		boolean Fin=false;
+		
+		while (!Fin) {
+			System.out.println("¿Que desea hacer?");
+			System.out.println("1.- Agregar nuevos estudiantes");
+			System.out.println("2.- Eliminar un estudiante por ID");
+			System.out.println("3.- Modificar un estudiante por ID");
+			System.out.println("4.- Mostrar todos los estudiantes");
+			System.out.println("5.- Salir");
+			
+			int opcion=teclado.nextInt();
+			
+			switch (opcion) {
+				case 1:
+					System.out.println("Introduzca el ID y seguido por un espacio el nombre");
+					int id=teclado.nextInt();
+					String nombre=teclado.next();
+					Registro.put(id, nombre);
+					break;
+					
+				case 2:
+					System.out.println("Introduzca el ID a eliminar");
+					integer idEliminar=teclado.nextInt();
+					Registro.remove(idEliminar);
+					System.out.println(idEliminar+" ha sido eliminado");
+					break;
+					
+					
+				case 3:
+					System.out.println("Introduzca el ID a modificar");
+					Integer idBuscar=teclado.nextInt();
+					
+					if(Registro.containsKey(idBuscar)) {
+						System.out.println("Nuevo nombre:");
+						String nuevoNombre=teclado.next();
+						Registro.put(idBuscar, nuevoNombre);
+					}
+					else {
+						System.out.println("No hay coincidencias");
+					}
+					
+					break;
+					
+				case 4:
+					if(!Registro.isEmpty()) {
+						System.out.println(Registro);
+					}
+					else {
+						System.out.println("La agenda esta vacía");
+					}
+					break;
+					
+				case 5:
+					System.out.println("Hasta la proxima");
+					Fin=true;
+					break;
+					
+				default: System.out.println("Introduzca una entrada valida");
+					
+			}
+		}
+		
+		teclado.close();
+		
+	}
+
+}

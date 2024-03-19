@@ -1,0 +1,33 @@
+package Set;
+
+import java.util.Set;
+import java.util.HashSet;
+
+public class VerificadorPalíndromos {
+    public static void main(String[] args) {
+
+        String palindrome1 = "Dábale arroz a la zorra el abad";
+        String palindrome2 = "Was it a car or a cat I saw?";
+        String notPalindrome = "Java is fun";
+
+        System.out.println("Is \"" + palindrome1 + "\" a palindrome? " + isPalindrome(palindrome1));
+        System.out.println("Is \"" + palindrome2 + "\" a palindrome? " + isPalindrome(palindrome2));
+        System.out.println("Is \"" + notPalindrome + "\" a palindrome? " + isPalindrome(notPalindrome));
+
+    }
+    public static boolean isPalindrome(String str) {
+        // Eliminar espacios y signos de puntuación y convertir a minúsculas
+        String cleanStr = str.replaceAll("[^a-zA-Z]", "").toLowerCase();
+
+        // Crear un conjunto para almacenar caracteres únicos
+        Set<Character> uniqueChars = new HashSet<>();
+
+        // Iterar sobre la cadena y agregar caracteres únicos al conjunto
+        for (char c : cleanStr.toCharArray()) {
+            uniqueChars.add(c);
+        }
+
+        // Verificar si la cantidad de caracteres únicos es igual o menor que 1
+        return uniqueChars.size() <= 1;
+    }
+}

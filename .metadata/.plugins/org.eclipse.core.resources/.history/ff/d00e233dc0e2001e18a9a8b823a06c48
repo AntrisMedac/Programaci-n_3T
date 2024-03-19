@@ -1,0 +1,26 @@
+package Map;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class AgrupaciónPersonasEdad {
+
+	public static void main(String[] args) {
+
+		HashMap<Integer, Persona> Lista=new HashMap<Integer, Persona>();
+		
+		Scanner teclado=new Scanner(System.in);
+		
+		System.out.println("Nombre de la persona:");
+		String nombre=teclado.next();
+		System.out.println("Edad de la persona:");
+		int edad=teclado.nextInt();
+		Persona persona=new Persona(nombre, edad);
+	
+		Lista.put(edad, persona);
+		
+		System.out.println(Lista);
+		
+	}
+
+}

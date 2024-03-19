@@ -1,0 +1,70 @@
+package Map;
+
+import java.util.HashMap;
+import java.util.*;
+
+public class DirectorioTelefónico {
+
+	public static void main(String[] args) {
+
+		HashMap<String, Integer> Agenda=new HashMap<String, Integer>();
+		
+		Scanner teclado=new Scanner(System.in);
+		
+		boolean Fin=false;
+		
+		while (!Fin) {
+			System.out.println("¿Que desea hacer?");
+			System.out.println("1.- Agregar nuevos contactos");
+			System.out.println("2.- Buscar un número de teléfono por nombre");
+			System.out.println("3.- Eliminar un contacto por nombre");
+			System.out.println("4.- Mostrar todos los contactos en el directorio");
+			System.out.println("5.- Salir");
+			
+			int opcion=teclado.nextInt();
+			
+			switch (opcion) {
+				case 1:
+					System.out.println("Introduzca el nombre y seguido por un espacio el número");
+					String nombre=teclado.next();
+					int numero=teclado.nextInt();
+					Agenda.put(nombre, numero);
+					break;
+				
+				case 2:
+					System.out.println("Introduzca el nombre a buscar");
+					String nombreBuscar=teclado.next();
+					System.out.println(Agenda.get(nombreBuscar));
+					break;
+					
+				case 3:
+					System.out.println("Introduzca el nombre a eliminar");
+					String nombreEliminar=teclado.next();
+					Agenda.remove(nombreEliminar);
+					System.out.println(nombreEliminar+" ha sido eliminado");
+					break;
+					
+				case 4:
+					if(!Agenda.isEmpty()) {
+						System.out.println(Agenda);
+					}
+					else {
+						System.out.println("La agenda esta vacía");
+					}
+					break;
+					
+				case 5:
+					System.out.println("Hasta la proxima");
+					Fin=true;
+					break;
+					
+				default: System.out.println("Introduzca una entrada valida");
+					
+			}
+		}
+		
+		teclado.close();
+		
+	}
+
+}

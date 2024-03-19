@@ -1,0 +1,16 @@
+package Set;
+
+import java.util.*;
+
+public class EliminaciónDuplicados {
+
+	public static void main(String[] args) {
+
+		HashSet<ArrayList>Lista=new HashSet<ArrayList>();
+		
+		Lista.add(1);
+		
+		
+	}
+
+}

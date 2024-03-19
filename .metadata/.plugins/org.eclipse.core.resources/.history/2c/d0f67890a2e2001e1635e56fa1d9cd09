@@ -1,0 +1,55 @@
+package Parking;
+
+public class Plaza {
+
+	private int numero;
+	private boolean ocupada;
+	private Vehiculo vehiculo;
+	
+	public Plaza(int numero, boolean ocupada) {
+		this.numero = numero;
+		this.ocupada = ocupada;
+	}
+
+	public int getNumero() {
+		return numero;
+	}
+
+	public boolean getOcupada() {
+		return ocupada;
+	}
+
+	public Vehiculo getVehiculo() {
+		return vehiculo;
+	}
+
+	public void setNumero(int numero) {
+		this.numero = numero;
+	}
+
+	public void setOcupada(boolean ocupada) {
+		this.ocupada = ocupada;
+	}
+
+	public void setVehiculo(Vehiculo vehiculo) {
+		vehiculo = vehiculo;
+	}
+	
+	public boolean ocuparPlaza(Vehiculo x) {
+		this.ocupada=true;
+		return ocupada;
+	}
+	
+	public Vehiculo liberarPlaza(String matricula) {
+		if (vehiculo.getMatricula().equals(matricula)) {
+			this.ocupada=false;
+		}
+		return vehiculo;
+	}
+
+	@Override
+	public String toString() {
+		return "{Plaza numero " + numero + ", ocupada=" + ocupada + ", vehiculo=" + vehiculo+"}";
+	}
+	
+}
