@@ -54,9 +54,6 @@ public class Plaza {
 			this.vehiculo=null;
 			return temporal;
 		}
-		else {
-			System.out.println("El parking esta vacío");
-		}
 		return null;
 	}
 

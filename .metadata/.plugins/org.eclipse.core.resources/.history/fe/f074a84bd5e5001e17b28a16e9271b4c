@@ -37,12 +37,14 @@ public class Parking {
 	
 	public boolean retirarVehiculo(String matricula) {
 		for (int i=0;i<parking.size();i++) {
-			if(parking.get(i).getOcupada()==true && parking.get(i).getVehiculo().getMatricula().equals(matricula)) {
+			if(parking.get(i).getOcupada()==true && matricula==parking.get(i).getVehiculo().getMatricula()) {
 				parking.get(i).liberarPlaza();
-				return true;
+			}
+			else {
+				System.out.println("El parking esta vacío");
 			}
 		}
-		return false;
+		return true;
 	}
 	
 	public void imprimirEstado() {

@@ -13,8 +13,8 @@ public class Main {
 		p1.estacionarVehiculo(new Vehiculo("1234 BCB", "Moto"));
 		p1.estacionarVehiculo(new Vehiculo("1235 BCB", "Avion"));
 		p1.imprimirEstado();
-		p1.retirarVehiculo("1234 BBB");
-		p1.imprimirEstado();
+		/*p1.retirarVehiculo("1234 BBB");
+		p1.imprimirEstado();*/
 	
 	}
 }
