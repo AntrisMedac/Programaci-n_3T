@@ -21,14 +21,28 @@ public class Parking {
 	
 	public void estacionarVehiculo(Vehiculo vehiculo) {
 		for (int i=0;i<parking.size();i++) {
-			if(!parking.get(i).getOcupada()) {
+			boolean estacionado=false;
+			if(parking.get(i).getOcupada()==false && estacionado==false) {
 				parking.get(i).setOcupada(true);
 				parking.get(i).setVehiculo(vehiculo);
+				estacionado=true;
+				break;
+			}
+			if (estacionado==true) {
+				System.out.println("El parking esta completo");
 			}
 		}
 	}
 	
 	public boolean retirarVehiculo(String matricula) {
+		for (int i=0;i<parking.size();i++) {
+			if(parking.get(i).getOcupada()==true && matricula==parking.get(i).getVehiculo().getMatricula()) {
+				parking.get(i).liberarPlaza();
+			}
+			else {
+				System.out.println("El parking esta vacío");
+			}
+		}
 		return true;
 	}
 	

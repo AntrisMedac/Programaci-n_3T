@@ -28,7 +28,7 @@ public class Vehiculo {
 
 	@Override
 	public String toString() {
-		return Tipo + "con matricula= "+ Matricula;
+		return Matricula;
 	}
 	
 }

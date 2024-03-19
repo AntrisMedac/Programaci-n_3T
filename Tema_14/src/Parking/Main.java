@@ -7,9 +7,20 @@ public class Main {
 		Parking p1=new Parking();
 	
 		p1.imprimirEstado();
-		p1.agregarPlazas(3);
+		p1.agregarPlazas(2);
 		p1.imprimirEstado();
-
+		
+		
+		
+		p1.imprimirEstado();
+		p1.estacionarVehiculo(new Vehiculo("1234 BBB", "Coche"));
+		p1.imprimirEstado();
+		p1.estacionarVehiculo(new Vehiculo("1234 BCB", "Moto"));
+		p1.imprimirEstado();
+		p1.estacionarVehiculo(new Vehiculo("1235 BCB", "Moto"));
+		p1.imprimirEstado();
+		/*p1.retirarVehiculo("1234 BBB");
+		p1.imprimirEstado();*/
 	
 	}
 }

@@ -33,7 +33,7 @@ public class Plaza {
 	}
 
 	public void setVehiculo(Vehiculo vehiculo) {
-		vehiculo = vehiculo;
+		this.vehiculo = vehiculo;
 	}
 	
 	public boolean ocuparPlaza(Vehiculo x) {
@@ -47,11 +47,14 @@ public class Plaza {
 		return ocupada;
 	}
 	
-	public Vehiculo liberarPlaza(String matricula) {
-		if (&& vehiculo.getMatricula().equals(matricula)) {
+	public Vehiculo liberarPlaza() {
+		if (this.ocupada==true) {
+			Vehiculo temporal=this.vehiculo;
 			this.ocupada=false;
+			this.vehiculo=null;
+			return temporal;
 		}
-		return vehiculo;
+		return null;
 	}
 
 	@Override
